@@ -19,3 +19,5 @@ splunk.py: Uses the Splunk API, geoip, ipwhois, pandas, numpy, and re to look up
 splunkfile.py: Uses pandas and re to search through a spunk.csv file and find successful logins.
 
 stocks.py: Playing around with lots of modules to look at stock market data, compute regressions, and create simulations.
+
+modules: A list of modules used in these files.
