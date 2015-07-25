@@ -27,5 +27,7 @@ splunkfile.py: Uses pandas and re to search through a spunk.csv file and find su
 
 stocks.py: Playing around with lots of modules to look at stock market data, compute regressions, and create simulations.
 
+trafficSim.py: A traffic simulation. Still in development.
+
 modules: A list of modules used in these files.
 
