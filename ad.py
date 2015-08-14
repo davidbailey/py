@@ -4,8 +4,8 @@ import datetime.datetime
 from ldap_paged_search import LdapPagedSearch
 
 host = 'ldaps://example.com:636'
-username = ‘domain\\username’
-password = ‘password’
+username = 'domain\\username'
+password = 'password'
 
 baseDN = 'DC=example,DC=com'
 filter = "(&(objectCategory=computer))"
