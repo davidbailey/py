@@ -12,8 +12,8 @@ filter = "(&(objectCategory=computer))"
 #attributes = ['dn']
 attributes = ['*']
 
-l = LdapPagedSearch(host, username, password, maxPages=0, pageSize=1000)
 #ldap.set_option(ldap.OPT_X_TLS_REQUIRE_CERT, ldap.OPT_X_TLS_NEVER)
+l = LdapPagedSearch(host, username, password, maxPages=0, pageSize=1000)
 results = l.search(baseDN, filter, attributes = attributes)
 
 computers = []
