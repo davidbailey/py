@@ -1,5 +1,6 @@
 from math import sqrt
 
+People = []
 class Person:
  def __init__(self,route):
   self.arrived = False
@@ -34,6 +35,11 @@ class Vehicle:
   self.driver = driver
   self.speed = 0.0
   self.acceleration = 0.0
+  self.deacceleraton = 0.0
+ def Accelerate():
+  self.speed += self.acceleration
+ def Deaccelerate():
+  self.speed += self.deacceleraton
 
 class Bicycle(Vehicle):
  def __init__(self,driver):
@@ -58,13 +64,15 @@ class Train:
 class Ferry:
  pass
 
-class Place:
+class Point:
  def __init__(self, x, y):
   self.x = x
   self.y = y
 
+Signals = []
 class Signal: # red = stop, yellow = stop if able, green = go
  def __init__(self,color,greenTime,redTime,yellowTime):
+  Signals.append(self)
   self.color = color
   self.greenTime = greenTime
   self.redTime = redTime
@@ -101,24 +109,20 @@ class FourWayStopSignIntersection:
 
 class TwoWayStopSign: # this direction stop, then yeild, then go
  def __init__(self):
+  pass
 
-
-class YeildSign: # yeild, then go
+class YeildSign: # yeild, thens go
  def __init__(self):
   pass
 
 class = Crosswalk: #
  def __init__(self):
-  pedestrian = False
-
-Signals = []
+  pedestrianPresent = False
 
 class FourWaySignal:
  def __init__(self,majorTime,minorTime,yellowTime):
   self.major = Signal('green',majorTime,minorTime+yellowTime,yellowTime)
-  Signals.append(self.major)
   self.minor = Signal('red',minorTime,majorTime+yellowTime,yellowTime)
-  Signals.append(self.minor)
 
 class FourWaySignalIntersection:
  def __init__(self)
@@ -134,18 +138,20 @@ class RoadSegment:
   self.signal = signal
   self.type = type
 
+class HalfTwoLaneRoad:
+ def __init__(self,end1,end2):
+  self.sidewalk1 = RoadSegment(end1,end2,'person')
+  self.sidewalk2 = RoadSegment(end2,end1,'person')
+  self.lane = RoadSegment(end1,end2,'vehicle')
+
 class TwoLaneRoad:
  def __init__(self,end1,end2):
-  self.sidewalk1a = RoadSegment(end1,end2,'person')
-  self.sidewalk1b = RoadSegment(end2,end1,'person')
-  self.roada = RoadSegment(end1,end2,'vehicle')
-  self.roadb = RoadSegment(end2,end1,'vehicle')
-  self.sidewalk2a = RoadSegment(end1,end2,'person')
-  self.sidewalk2b = RoadSegment(end2,end1,'person')
+  self.half1 = HalfTwoLaneRoad(end1,end2)
+  self.half2 = HalfTwoLaneRoad(end2,end1)
 
-p1 = Place(0,0)
-p2 = Place(10,10)
-p3 = Place(20,20)
+p1 = Point(0,0)
+p2 = Point(10,10)
+p3 = Point(20,20)
 
 rs1 = RoadSegment(p1,p2,s1)
 rs2 = RoadSegment(p2,p3,s2)
@@ -155,7 +161,6 @@ rs4 = RoadSegment(p2,p1,s2)
 
 P1 = Person([rs2,rs1])
 P2 = Person([rs4,rs3])
-People = [P1,P2]
 
 while P1.arrived == False:
  for S in Signals:
