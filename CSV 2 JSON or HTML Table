@@ -34,9 +34,9 @@ for x in headers:
   print "<td>", x, "</td>"
  
 print "</tr>"
-for x in df.iterrows():
+for (i, x) in df.iterrows():
   print "<tr>"
-  for y in x[1]:
+  for y in x:
     print "<td>", y, "</td>"
   print "</tr>"
 
