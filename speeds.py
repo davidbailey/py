@@ -39,7 +39,7 @@ stopLocations = []
 midPoints = []
 for stop in stop_ids:
   if previousStop:
-    currentStop = Point(float(amtrak.stops[amtrak.stops['stop_id'] == stop]['stop_lat']),float(amtrak.stops[amtrak.stops['stop_id'] == stop]['stop_lon']))
+    currentStop = Point(float(amtrak.stops[amtrak.stops['stop_id'] == stop]['stop_lon']),float(amtrak.stops[amtrak.stops['stop_id'] == stop]['stop_lat']))
     distanceToPreviousStop = 65.93*currentStop.distance(previousStop)
     distances.append(distanceToPreviousStop)
     midPoints.append(Point((previousStop.x+currentStop.x)/2,(previousStop.y+currentStop.y)/2))
