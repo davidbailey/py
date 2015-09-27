@@ -2,15 +2,12 @@ import pandas
 import numpy
 import gtfstk
 from shapely.geometry import Point
+from shapely.geometry import LineString
 import matplotlib.pyplot as plt
 from datetime import timedelta
 from os.path import expanduser
 import geopandas
-
-amtrak = gtfstk.feed.Feed(expanduser('~/Desktop/amtrak_20140723_0354.zip')) #http://www.gtfs-data-exchange.com/agency/amtrak/
-trip_ids = amtrak.trips[(amtrak.trips['route_id'] == '66') & (amtrak.trips['direction_id'] == 0)]['trip_id']
-stops = pandas.merge(pandas.DataFrame(trip_ids),amtrak.stop_times)
-trains = stops.groupby('trip_id')
+from bottle import route, run, template
 
 def combine(listA,listB):
   if not listA:
@@ -28,61 +25,71 @@ def combine(listA,listB):
     newList.extend(combine(listA[1:],listB))
     return newList
 
-stop_ids = []
-for index, train in trains:
-  train = train.sort('stop_sequence')
-  stop_ids = combine(stop_ids,list(train['stop_id']))
-
-previousStop = False
-distances = []
-stopLocations = []
-midPoints = []
-for stop in stop_ids:
-  if previousStop:
-    currentStop = Point(float(amtrak.stops[amtrak.stops['stop_id'] == stop]['stop_lon']),float(amtrak.stops[amtrak.stops['stop_id'] == stop]['stop_lat']))
-    distanceToPreviousStop = 65.93*currentStop.distance(previousStop)
-    distances.append(distanceToPreviousStop)
-    midPoints.append(Point((previousStop.x+currentStop.x)/2,(previousStop.y+currentStop.y)/2))
-  previousStop = Point(float(amtrak.stops[amtrak.stops['stop_id'] == stop]['stop_lon']),float(amtrak.stops[amtrak.stops['stop_id'] == stop]['stop_lat']))
-  stopLocations.append(previousStop)
-
-times = []
-for index, train in trains:
-  #time = [list(train['trip_id'])[0]]
-  time = []
-  departureTime = False
+def getJSONs(route,direction):
+  amtrak = gtfstk.feed.Feed(expanduser('~/Desktop/amtrak_20140723_0354.zip')) #http://www.gtfs-data-exchange.com/agency/amtrak/
+  trip_ids = amtrak.trips[(amtrak.trips['route_id'] == str(route)) & (amtrak.trips['direction_id'] == int(direction))]['trip_id']
+  stops = pandas.merge(pandas.DataFrame(trip_ids),amtrak.stop_times)
+  trains = stops.groupby('trip_id')
+  stop_ids = []
+  for index, train in trains:
+    train = train.sort('stop_sequence')
+    stop_ids = combine(stop_ids,list(train['stop_id']))
+  previousStop = False
+  distances = []
+  stopLocations = []
+  lineStrings = []
   for stop in stop_ids:
-    if stop in list(train['stop_id']):
-      if departureTime:
-        h, m, s = map(int,list(train[train['stop_id'] == stop]['arrival_time'])[0].split(':'))
-        arrivalTime = timedelta(hours=h, minutes=m, seconds=s)
-        delta = arrivalTime - departureTime
-        time.append(delta.total_seconds()/60/60)
-      h, m, s = map(int,list(train[train['stop_id'] == stop]['departure_time'])[0].split(':'))
-      departureTime = timedelta(hours=h, minutes=m, seconds=s)
-    else:
-      time.append(0)
-  times.append(time)
+    if previousStop:
+      currentStop = Point(float(amtrak.stops[amtrak.stops['stop_id'] == stop]['stop_lon']),float(amtrak.stops[amtrak.stops['stop_id'] == stop]['stop_lat']))
+      distanceToPreviousStop = 65.93*currentStop.distance(previousStop)
+      distances.append(distanceToPreviousStop)
+      lineStrings.append(LineString([list(currentStop.coords)[0],list(previousStop.coords)[0]]))
+    previousStop = Point(float(amtrak.stops[amtrak.stops['stop_id'] == stop]['stop_lon']),float(amtrak.stops[amtrak.stops['stop_id'] == stop]['stop_lat']))
+    stopLocations.append(previousStop)
+  times = []
+  for index, train in trains:
+    time = []
+    departureTime = False
+    for stop in stop_ids:
+      if stop in list(train['stop_id']):
+	if departureTime:
+	  h, m, s = map(int,list(train[train['stop_id'] == stop]['arrival_time'])[0].split(':'))
+	  arrivalTime = timedelta(hours=h, minutes=m, seconds=s)
+	  delta = arrivalTime - departureTime
+	  time.append(delta.total_seconds()/60/60)
+	h, m, s = map(int,list(train[train['stop_id'] == stop]['departure_time'])[0].split(':'))
+	departureTime = timedelta(hours=h, minutes=m, seconds=s)
+      else:
+	time.append(0)
+    times.append(time)
+  stopsGDF = geopandas.GeoDataFrame(stopLocations,stop_ids)
+  stopsGDF.columns = ['geometry']
+  distancesS = pandas.Series(distances)
+  timesDF = pandas.DataFrame(times)
+  timesDF = timesDF.replace(0.0, numpy.nan)
+  speedS = distancesS / timesDF.mean()
+  speedS = speedS.round(2)
+  speedGDF = geopandas.GeoDataFrame(lineStrings,speedS)
+  speedGDF.columns = ['geometry']
+  return [stopsGDF.to_json(), speedGDF.to_json()]
 
-stopsGDF = geopandas.GeoDataFrame(stopLocations,stop_ids)
-stopsGDF.columns = ['geometry']
+@route('/<route>/<direction>')
+def index(route,direction):
+  stops, speeds = getJSONs(route,direction)
+  f = open(expanduser('~/Desktop/speeds.tpl'), 'r')
+  return template(f.read(), speeds = speeds, stops = stops)
+  f.close()
 
-stop_ids.pop()
-distancesS = pandas.Series(distances)
-timesDF = pandas.DataFrame(times)
-speedDF = distancesS / timesDF
-speedDF.columns = stop_ids
-speedDFT = speedDF.transpose()
+run(host='localhost', port=8080)
 
-speedDFT.plot(legend=False)
-ax = plt.axes()
-ax.yaxis.grid()
-plt.show()
+#speedDFlables = stop_ids
+#speedDFlables.pop()
+#speedDF = distancesS / timesDF
+#speedDF.columns = speedDFlables 
+#speedDFT = speedDF.transpose()
 
-speedDF = distancesS / timesDF
-speedGDF = geopandas.GeoDataFrame(speedDF)
-speedGDFT = speedGDF.transpose()
-speedGDFT['geometry'] = midPoints
+#speedDFT.plot(legend=False)
+#ax = plt.axes()
+#ax.yaxis.grid()
+#plt.show()
 
-stopsGDF.to_json()
-speedGDFT.to_json()
