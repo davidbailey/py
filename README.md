@@ -25,6 +25,8 @@ nessus_report.py is a Python script that take a SQLite database containing Nessu
 
 risk.py: Playing around with plots.
 
+speeds.py: calculate the average speed of any Amtrak train between each of its stops.
+
 splunk.py: Uses the Splunk API, geoip, ipwhois, pandas, numpy, and re to look up recent successful logins and track down the client computer.
 
 splunkfile.py: Uses pandas and re to search through a spunk.csv file and find successful logins.
