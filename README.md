@@ -45,7 +45,7 @@ trafficSim.py: A traffic simulation. Still in development. Moving to using Scala
 
 transportationBook.py: Playing with examples from Dr. Christopher M. Monsere's textbook (http://web.cecs.pdx.edu/~monserec/t.data/).
 
-usc.py: Uses pandas, matplotlib, numpy, and cartopy to look at USC's success in the olympics.
+usc.py: Uses pandas, matplotlib, numpy, and cartopy to look at USC's success in the Olympics.
 
 modules: A list of modules used in these files.
 
