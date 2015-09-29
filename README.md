@@ -1,8 +1,14 @@
-ad.py:
+ad.py: Uses ldap and pandas to connect to an Active Directory Domain Controller and build a DataFrame with inforamtion about all member computers.
 
 basemap.py: Uses Basemap and CoreLocation (via PyObjC), and bumpy to generate a map and highlight your location.
 
+county-map.py: Uses overpy (openstreetmap), numpy, matplotlib, shapely, descartes, and fiona to build a fancy map of Los Angeles County.
+
+csv 2 json or html.py: Uses pandas and json to convert a csv to a json file or an html table.
+
 finance.py: Financial calculators.
+
+flowPairCheck.py: Uses pandas and numpy to check for communications between a list of clients and a list of servers in netflow traffic.
 
 freq.py: Uses pandas and matplotlib to plot a frequency.csv file.
 
@@ -12,9 +18,11 @@ gis.py: Playing around with fiona, shapely, and descartes to draw maps.
 
 gpx.py: Uses gpxpy to convert a gpx file into a list of points.
 
-iphorse.py:
+highwayDesign.py: Uses sympy to solve equations about Highway Design.
 
-map.py: Uses openstreetmap (overly), shapley, and descartes to draw a map of primary roads in Los Angeles County.
+iphorse.py: Uses requests and yaml to find your public IP address and return it as yaml.
+
+map-state.py: Uses overpy (openstreetmap), numpy, matplotlib, shapely, descartes, and fiona to build a fancy map of California.
 
 nessus_report.py is a Python script that take a SQLite database containing Nessus vulnerability scan results, processes, them, and generates PDF reports. It is intended for large multi-department organizations that need to quickly sort through large amounts of scan data and create relevent reports for each department.
 
@@ -25,7 +33,7 @@ nessus_report.py is a Python script that take a SQLite database containing Nessu
 
 risk.py: Playing around with plots.
 
-speeds.py: calculate the average speed of any Amtrak train between each of its stops.
+speeds.py: Uses pandas, numpy, gtfstk, shapely, matplotlib, geopandas, and bottle to calculate the average speed of any Amtrak train between each of its stops.
 
 splunk.py: Uses the Splunk API, geoip, ipwhois, pandas, numpy, and re to look up recent successful logins and track down the client computer.
 
@@ -33,9 +41,11 @@ splunkfile.py: Uses pandas and re to search through a spunk.csv file and find su
 
 stocks.py: Playing around with lots of modules to look at stock market data, compute regressions, and create simulations.
 
-trafficSim.py: A traffic simulation. Still in development.
+trafficSim.py: A traffic simulation. Still in development. Moving to using Scala: https://github.com/davidbailey/TransportSim
 
-transportationBook.py:
+transportationBook.py: Playing with examples from Dr. Christopher M. Monsere's textbook (http://web.cecs.pdx.edu/~monserec/t.data/).
+
+usc.py: Uses pandas, matplotlib, numpy, and cartopy to look at USC's success in the olympics.
 
 modules: A list of modules used in these files.
 
