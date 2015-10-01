@@ -35,7 +35,7 @@ risk.py: Playing around with plots.
 
 speeds.py: Uses pandas, numpy, gtfstk, shapely, matplotlib, geopandas, and bottle to calculate the average speed of any Amtrak train (or other GTFS route) between each of its stops.
 
-![speeds.py example](https://github.com/davidbailey/py/raw/master/src/common/images/speeds.png "speeds.py example")
+![speeds.py example](https://raw.githubusercontent.com/davidbailey/py/master/speeds.png "speeds.py example")
 
 splunk.py: Uses the Splunk API, geoip, ipwhois, pandas, numpy, and re to look up recent successful logins and track down the client computer.
 
