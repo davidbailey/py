@@ -37,7 +37,7 @@ nessus_report.py is a Python script that take a SQLite database containing Nessu
 
 risk.py: Playing around with plots.
 
-speeds.py: Uses pandas, numpy, gtfstk, shapely, matplotlib, geopandas, and bottle to calculate the average speed of any Amtrak train (or other GTFS route) between each of its stops.
+speeds.py: Uses pandas, numpy, gtfstk, shapely, matplotlib, geopandas, and bottle to calculate the average speed (in MPH) of any Amtrak train (or other GTFS route) between each of its stops.
 
 ![speeds.py example](https://raw.githubusercontent.com/davidbailey/py/master/speeds.png "speeds.py example")
 
