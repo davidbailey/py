@@ -1,4 +1,31 @@
 language: python
 python:
   - "2.7"
-install: "pip install -r modules"
+install: "pip install -r 
+bottle
+cartopy
+CoreLocation
+descartes
+fiona
+geoip
+geopandas
+gpxpy
+ipwhois
+ldap_paged_search
+lxml
+matplotlib
+mpl_toolkits
+numpy
+overpy
+pandas
+psycopg2
+pycurl
+requests
+rpy2
+scipy
+shapely
+splunklib
+statsmodels
+sympy
+yaml
+"
