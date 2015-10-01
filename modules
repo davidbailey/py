@@ -1,6 +1,7 @@
-collections
-CoreLocation
+bottle
 cStringIO
+cartopy
+CoreLocation
 csv
 datetime
 descartes
@@ -9,6 +10,9 @@ geoip
 geopandas
 gpxpy
 ipwhois
+json
+ldap
+ldap_paged_search
 lxml
 math
 matplotlib
@@ -18,9 +22,11 @@ numpy
 os
 overpy
 pandas
+pickle
 psycopg2
 pycurl
 re
+requests
 rpy2
 scipy
 shapely
@@ -28,3 +34,5 @@ socket
 splunklib
 sqlite3
 statsmodels
+sympy
+yaml
