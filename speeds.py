@@ -27,7 +27,7 @@ def combine(listA,listB):
 
 def getJSONs(route,direction):
   amtrak = gtfstk.feed.Feed(expanduser('~/Desktop/amtrak_20140723_0354.zip')) #http://www.gtfs-data-exchange.com/agency/amtrak/
-  trip_ids = amtrak.trips[(amtrak.trips['route_id'] == str(route).replace('%20', ' ') & (amtrak.trips['direction_id'] == int(direction))]['trip_id']
+  trip_ids = amtrak.trips[(amtrak.trips['route_id'] == str(route).replace('%20', ' ')) & (amtrak.trips['direction_id'] == int(direction))]['trip_id']
   stops = pandas.merge(pandas.DataFrame(trip_ids),amtrak.stop_times)
   trains = stops.groupby('trip_id')
   stop_ids = []
