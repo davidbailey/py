@@ -4,6 +4,8 @@ basemap.py: Uses Basemap and CoreLocation (via PyObjC), and bumpy to generate a 
 
 county-map.py: Uses overpy (openstreetmap), numpy, matplotlib, shapely, descartes, and fiona to build a fancy map of Los Angeles County.
 
+![county-map.py example](https://raw.githubusercontent.com/davidbailey/py/master/county-map.png "county-map.py example")
+
 csv 2 json or html.py: Uses pandas and json to convert a csv to a json file or an html table.
 
 finance.py: Financial calculators.
