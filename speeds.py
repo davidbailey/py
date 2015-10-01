@@ -9,6 +9,22 @@ from os.path import expanduser
 import geopandas
 from bottle import route, run, template
 
+def combine(listA,listB):
+  if not listA:
+    return listB
+  elif not listB:
+    return listA
+  elif listA[0] == listB[0]:
+    newList = [listA[0]]
+    newList.extend(combine(listA[1:],listB[1:]))
+    return newList
+  elif listA[0] in listB:
+    return combine(listB,listA)
+  else:
+    newList = [listA[0]]
+    newList.extend(combine(listA[1:],listB))
+    return newList
+
 def getJSONs(route,direction):
   amtrak = gtfstk.feed.Feed(expanduser('~/Desktop/amtrak_20140723_0354.zip')) #http://www.gtfs-data-exchange.com/agency/amtrak/
   trip_ids = amtrak.trips[(amtrak.trips['route_id'] == str(route).replace('%20', ' ') & (amtrak.trips['direction_id'] == int(direction))]['trip_id']
@@ -17,7 +33,7 @@ def getJSONs(route,direction):
   stop_ids = []
   for index, train in trains:
     train = train.sort('stop_sequence')
-    stop_ids = set(stop_ids) | set(train['stop_id'])
+    stop_ids = combine(stop_ids,list(train['stop_id']))
   previousStop = False
   distances = []
   stopLocations = []
