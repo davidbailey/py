@@ -33,7 +33,7 @@ nessus_report.py is a Python script that take a SQLite database containing Nessu
 
 risk.py: Playing around with plots.
 
-speeds.py: Uses pandas, numpy, gtfstk, shapely, matplotlib, geopandas, and bottle to calculate the average speed of any Amtrak train between each of its stops.
+speeds.py: Uses pandas, numpy, gtfstk, shapely, matplotlib, geopandas, and bottle to calculate the average speed of any Amtrak train (or other GTFS route) between each of its stops.
 
 splunk.py: Uses the Splunk API, geoip, ipwhois, pandas, numpy, and re to look up recent successful logins and track down the client computer.
 
@@ -48,4 +48,3 @@ transportationBook.py: Playing with examples from Dr. Christopher M. Monsere's t
 usc.py: Uses pandas, matplotlib, numpy, and cartopy to look at USC's success in the Olympics.
 
 modules: A list of modules used in these files.
-
