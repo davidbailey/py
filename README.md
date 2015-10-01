@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/davidbailey/py.svg?branch=master)](https://travis-ci.org/davidbailey/py)
 
-ad.py: Uses ldap and pandas to connect to an Active Directory Domain Controller and build a DataFrame with inforamtion about all member computers.
+ad.py: Uses ldap and pandas to connect to an Active Directory Domain Controller and build a DataFrame with information about all member computers.
 
 basemap.py: Uses Basemap and CoreLocation (via PyObjC), and bumpy to generate a map and highlight your location.
 
