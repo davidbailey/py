@@ -33,7 +33,8 @@
       var speedStyleFunctionCreator = function() {
 	return function(feature, resolution) {
 	  var style =  new ol.style.Style({ 
-	    text: new ol.style.Text({ text: feature.getId(), scale: 1.5, fill: new ol.style.Fill({ color: 'rgba(0, 0, 0, 1)' }), stroke: new ol.style.Stroke({ color: 'rgba(255, 255, 255, 1)' }),  }), 
+	    text: new ol.style.Text({ text: feature.getId(), scale: 1.5, fill: new ol.style.Fill({ color: 'rgba(0, 0, 0, 1)' }), stroke: new ol.style.Stroke({ color: 'rgba(255, 255, 255, 1)' }), offsetY: -20, offsetX: -20 }),
+            stroke: new ol.style.Stroke({ color: 'rgba(' + Math.floor(feature.getId()) + ',' + Math.floor(feature.getId()) + ',' + Math.floor(feature.getId()) + ', 1)' }),
 	  }) 
 	return [style];
 	}
