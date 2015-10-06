@@ -26,9 +26,18 @@ def combine(listA,listB):
     return newList
 
 def getJSONs(route,direction):
-  amtrak = gtfstk.feed.Feed(expanduser('~/Desktop/amtrak_20140723_0354.zip')) #http://www.gtfs-data-exchange.com/agency/amtrak/
-  trip_ids = amtrak.trips[(amtrak.trips['route_id'] == str(route).replace('%20', ' ')) & (amtrak.trips['direction_id'] == int(direction))]['trip_id']
-  stops = pandas.merge(pandas.DataFrame(trip_ids),amtrak.stop_times)
+#  amtrak = gtfstk.feed.Feed(expanduser('~/Desktop/amtrak_20140723_0354.zip')) #http://www.gtfs-data-exchange.com/agency/amtrak/
+  amtrak = gtfstk.feed.Feed(expanduser('~/Desktop/la-metro_20101211_0848.zip'))
+  amtrak.trips.set_index('route_id', inplace=True)
+  amtrak.trips.sort_index(inplace=True)
+  amtrak.stop_times.set_index('stop_headsign', inplace=True)
+  amtrak.stop_times.sort_index(inplace=True)
+  amtrak.stops.set_index('stop_id', inplace=True)
+  amtrak.stops.sort_index(inplace=True)
+#  trip_ids = amtrak.trips[(amtrak.trips['route_id'] == str(route).replace('%20', ' ')) & (amtrak.trips['direction_id'] == int(direction))]['trip_id']
+#  stops = pandas.merge(pandas.DataFrame(trip_ids),amtrak.stop_times)
+  trip_ids = amtrak.trips.loc[str(route).replace('%20', ' ')]['trip_id']
+  stops = pandas.merge(pandas.DataFrame(trip_ids),amtrak.stop_times.loc[str(direction).replace('%20',' ')])
   trains = stops.groupby('trip_id')
   stop_ids = []
   for index, train in trains:
@@ -40,11 +49,11 @@ def getJSONs(route,direction):
   lineStrings = []
   for stop in stop_ids:
     if previousStop:
-      currentStop = Point(float(amtrak.stops[amtrak.stops['stop_id'] == stop]['stop_lon']),float(amtrak.stops[amtrak.stops['stop_id'] == stop]['stop_lat']))
+      currentStop = Point(float(amtrak.stops.loc[stop]['stop_lon']),float(amtrak.stops.loc[stop]['stop_lat']))
       distanceToPreviousStop = 65.93*currentStop.distance(previousStop)
       distances.append(distanceToPreviousStop)
       lineStrings.append(LineString([list(currentStop.coords)[0],list(previousStop.coords)[0]]))
-    previousStop = Point(float(amtrak.stops[amtrak.stops['stop_id'] == stop]['stop_lon']),float(amtrak.stops[amtrak.stops['stop_id'] == stop]['stop_lat']))
+    previousStop = Point(float(amtrak.stops.loc[stop]['stop_lon']),float(amtrak.stops.loc[stop]['stop_lat']))
     stopLocations.append(previousStop)
   times = []
   for index, train in trains:
@@ -67,6 +76,8 @@ def getJSONs(route,direction):
   distancesS = pandas.Series(distances)
   timesDF = pandas.DataFrame(times)
   timesDF = timesDF.replace(0.0, numpy.nan)
+#  speedS = distancesS / timesDF.max()
+#  speedS = distancesS / timesDF.min()
   speedS = distancesS / timesDF.mean()
   speedS = speedS.round(2)
   speedGDF = geopandas.GeoDataFrame(lineStrings,speedS)
