@@ -104,7 +104,7 @@ def getJSONs(route,direction):
 @route('/<route>/<direction>')
 def index(route,direction):
   stops, speeds = getJSONs(route,direction)
-  f = open(expanduser('~/Desktop/speeds.tpl'), 'r')
+  f = open(expanduser('~/Desktop/py/speeds.tpl'), 'r')
   return template(f.read(), speeds = speeds, stops = stops)
   f.close()
 
