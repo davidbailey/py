@@ -13,6 +13,10 @@
   <body>
     <div id="map" class="map"></div>
     <script type="text/javascript">
+      function speed2color(speed){
+        h = speed
+        return Array(255*Math.sin(h),255*Math.sin(h+120),255*Math.sin(h+240),1);
+      }
       var stops = {{!stops}};
       var speeds = {{!speeds}};
       var stopSource = new ol.source.Vector({
@@ -34,7 +38,7 @@
 	return function(feature, resolution) {
 	  var style =  new ol.style.Style({ 
 	    text: new ol.style.Text({ text: feature.getId(), scale: 1.5, fill: new ol.style.Fill({ color: 'rgba(0, 0, 0, 1)' }), stroke: new ol.style.Stroke({ color: 'rgba(255, 255, 255, 1)' }), offsetY: -20, offsetX: -20 }),
-            stroke: new ol.style.Stroke({ color: 'rgba(' + Math.floor(feature.getId()) + ',' + Math.floor(feature.getId()) + ',' + Math.floor(feature.getId()) + ', 1)' }),
+            stroke: new ol.style.Stroke({ width: feature.getId(), color: speed2color(feature.getId()) }),
 	  }) 
 	return [style];
 	}
