@@ -41,20 +41,20 @@ class getFeed:
     return getattr(self, name)
 
 #  amtrak = gtfstk.feed.Feed(expanduser('~/Desktop/la-metro_20101211_0848.zip'))  #http://www.gtfs-data-exchange.com/agency/la-metro/
-# amtrak = getFeed('http://gtfs.s3.amazonaws.com/amtrak_20140723_0354.zip')
-amtrak = getFeed('http://gtfs.s3.amazonaws.com/la-metro_20101211_0848.zip')
-amtrak.trips.set_index('route_id', inplace=True)
-amtrak.trips.sort_index(inplace=True)
-amtrak.stop_times.set_index('stop_headsign', inplace=True)
-amtrak.stop_times.sort_index(inplace=True)
+amtrak = getFeed('http://gtfs.s3.amazonaws.com/amtrak_20140723_0354.zip')
 amtrak.stops.set_index('stop_id', inplace=True)
 amtrak.stops.sort_index(inplace=True)
+#amtrak = getFeed('http://gtfs.s3.amazonaws.com/la-metro_20101211_0848.zip')
+#amtrak.stop_times.set_index('stop_headsign', inplace=True)
+#amtrak.stop_times.sort_index(inplace=True)
+#amtrak.trips.set_index('route_id', inplace=True)
+#amtrak.trips.sort_index(inplace=True)
 
 def getJSONs(route,direction):
-#  trip_ids = amtrak.trips[(amtrak.trips['route_id'].astype(str) == str(route).replace('%20', ' ')) & (amtrak.trips['direction_id'] == int(direction))]['trip_id']
-#  stops = pandas.merge(pandas.DataFrame(trip_ids),amtrak.stop_times)
-  trip_ids = amtrak.trips.loc[str(route).replace('%20', ' ')]['trip_id']
-  stops = pandas.merge(pandas.DataFrame(trip_ids),amtrak.stop_times.loc[str(direction).replace('%20',' ')])
+  trip_ids = amtrak.trips[(amtrak.trips['route_id'].astype(str) == str(route).replace('%20', ' ')) & (amtrak.trips['direction_id'] == int(direction))]['trip_id']
+  stops = pandas.merge(pandas.DataFrame(trip_ids),amtrak.stop_times)
+#  trip_ids = amtrak.trips.loc[str(route).replace('%20', ' ')]['trip_id']
+#  stops = pandas.merge(pandas.DataFrame(trip_ids),amtrak.stop_times.loc[str(direction).replace('%20',' ')])
   trains = stops.groupby('trip_id')
   stop_ids = []
   for index, train in trains:
