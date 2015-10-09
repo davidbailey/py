@@ -1,6 +1,6 @@
 os:
   - osx
-install: "brew update && brew install python gfortran && brew tap homebrew/science && brew install R && pip install
+install: "brew update && brew install python gcc && brew tap homebrew/science && brew install R && pip install
 bottle
 cython
 PyObjC
