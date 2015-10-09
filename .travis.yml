@@ -6,7 +6,7 @@ cython
 PyObjC
 descartes
 fiona
-geoip
+python-geoip
 geopandas
 gpxpy
 ipwhois
