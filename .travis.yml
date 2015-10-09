@@ -1,9 +1,6 @@
 os:
   - osx
-language: python
-python:
-  - "2.7"
-install: "pip install
+install: "brew update && brew install python && pip install
 bottle
 cartopy
 CoreLocation
