@@ -1,8 +1,8 @@
 os:
   - osx
-install: "brew update && brew install python && pip install cython && pip install
+install: "brew update && brew install python && pip install
 bottle
-cartopy
+cython
 CoreLocation
 descartes
 fiona
@@ -27,4 +27,5 @@ splunklib
 statsmodels
 sympy
 yaml
+&& pip install cartopy
 "
