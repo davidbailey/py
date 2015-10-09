@@ -22,7 +22,7 @@ requests
 rpy2
 scipy
 shapely
-splunklib
+splunk-sdk
 statsmodels
 sympy
 yaml
