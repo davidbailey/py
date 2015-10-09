@@ -25,6 +25,6 @@ shapely
 splunk-sdk
 statsmodels
 sympy
-yaml
+pyyaml
 && pip install cartopy
 "
