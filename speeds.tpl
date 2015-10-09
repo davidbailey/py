@@ -14,8 +14,8 @@
     <div id="map" class="map"></div>
     <script type="text/javascript">
       function speed2color(speed){
-        h = speed
-        return Array(255*Math.sin(h),255*Math.sin(h+120),255*Math.sin(h+240),1);
+        h = 2*3.14*speed/45
+        return Array(127.5+127.5*Math.sin(h),127.5+127.5*Math.sin(h+120),127.5+127.5*Math.sin(h+240),1);
       }
       var stops = {{!stops}};
       var speeds = {{!speeds}};
