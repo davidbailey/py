@@ -3,7 +3,7 @@ os:
 install: "brew update && brew install python && pip install
 bottle
 cython
-CoreLocation
+PyObjC
 descartes
 fiona
 geoip
