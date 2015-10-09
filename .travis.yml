@@ -1,6 +1,7 @@
 os:
   - osx
 install: "brew update && brew install python && pip install
+cython
 bottle
 cartopy
 CoreLocation
