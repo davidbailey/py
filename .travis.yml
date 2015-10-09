@@ -13,7 +13,6 @@ ipwhois
 ldap_paged_search
 lxml
 matplotlib
-mpl_toolkits
 numpy
 overpy
 pandas
