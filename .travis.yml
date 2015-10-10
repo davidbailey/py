@@ -2,7 +2,7 @@ sudo: required
 addons:
   apt:
     packages:
-      - gdal
+      - gdal-bin
 language: 
   - r
   - python
