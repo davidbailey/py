@@ -3,36 +3,27 @@ addons:
   apt:
     packages:
       - libgdal-dev
+      - cython
+      - python-bottle
       - python-scipy
       - python-numpy
+      - python-statsmodels
+      - python-yaml
+      - python-geopandas
+      - python-pandas
+      - python-fiona
+      - python-matplotlib
+      - python-descartes
+      - python-requests
+      - python-rpy2
+      - python-shapely
+      - python-geoip
+      - python-lxml
+      - python-psycopg2
+      - python-pycurl
+      - python-sympy
 language: 
-  - r
   - python
 python:
   - "2.7"
-install: "
-sudo pip install cython
-&& sudo pip install bottle
-&& sudo pip install descartes
-&& sudo pip install fiona
-&& sudo pip install python-geoip
-&& sudo pip install geopandas
-&& sudo pip install gpxpy
-&& sudo pip install ipwhois
-&& sudo pip install ldap_paged_search
-&& sudo pip install lxml
-&& sudo pip install matplotlib
-&& sudo pip install overpy
-&& sudo pip install pandas
-&& sudo pip install psycopg2
-&& sudo pip install pycurl
-&& sudo pip install requests
-&& sudo pip install rpy2
-&& sudo pip install shapely
-&& sudo pip install splunk-sdk
-&& sudo pip install patsy
-&& sudo pip install statsmodels
-&& sudo pip install sympy
-&& sudo pip install pyyaml
-&& sudo pip install cartopy
-"
+install: "sudo pip install gpxpy ipwhois ldap_paged_search  overpy splunk-sdk install cartopy"
