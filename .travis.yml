@@ -4,9 +4,11 @@ language:
   - python
 python:
   - "2.7"
-install: "pip install
+install: "
+sudo pip install 
+cython
+&& sudo pip install
 bottle
-cython 
 descartes
 fiona
 python-geoip
@@ -29,5 +31,6 @@ splunk-sdk
 statsmodels
 sympy
 pyyaml
-&& pip install cartopy
+&& sudo pip install
+cartopy
 "
