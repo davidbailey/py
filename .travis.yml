@@ -3,6 +3,8 @@ addons:
   apt:
     packages:
       - libgdal-dev
+      - python-scipy
+      - python-numpy
 language: 
   - r
   - python
@@ -20,14 +22,12 @@ sudo pip install cython
 && sudo pip install ldap_paged_search
 && sudo pip install lxml
 && sudo pip install matplotlib
-&& sudo pip install numpy
 && sudo pip install overpy
 && sudo pip install pandas
 && sudo pip install psycopg2
 && sudo pip install pycurl
 && sudo pip install requests
 && sudo pip install rpy2
-&& travis_wait sudo pip install scipy
 && sudo pip install shapely
 && sudo pip install splunk-sdk
 && sudo pip install patsy
