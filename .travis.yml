@@ -1,6 +1,9 @@
-os:
-  - osx
-install: "brew update && brew install python && brew tap homebrew/science && brew install R && pip install
+language: 
+  - r
+  - python
+python:
+  - "2.7"
+install: "pip install
 bottle
 cython 
 descartes
