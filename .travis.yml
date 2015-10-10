@@ -1,9 +1,8 @@
 os:
   - osx
-install: "brew update && brew install python && brew tap homebrew/science && brew install R && travis_wait pip install --quiet
+install: "brew update && brew install python && brew tap homebrew/science && brew install R && pip install
 bottle
 cython 
-PyObjC
 descartes
 fiona
 python-geoip
