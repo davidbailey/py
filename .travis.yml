@@ -1,4 +1,8 @@
 sudo: required
+addons
+  apt
+    packages
+      - gdal
 language: 
   - r
   - python
