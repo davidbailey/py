@@ -2,8 +2,10 @@ os:
   - osx
 install: "brew update && brew install python && brew tap homebrew/science && brew install R && pip install --quiet
 bottle
-cython
+cython 
+&& pip install
 PyObjC
+&& pip install --quiet 
 descartes
 fiona
 python-geoip
