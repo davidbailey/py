@@ -30,6 +30,7 @@ sudo pip install cython
 && sudo pip install scipy
 && sudo pip install shapely
 && sudo pip install splunk-sdk
+&& sudo pip install patsy
 && sudo pip install statsmodels
 && sudo pip install sympy
 && sudo pip install pyyaml
