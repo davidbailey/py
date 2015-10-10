@@ -1,6 +1,7 @@
 from mpl_toolkits.basemap import Basemap
 from matplotlib import pyplot
 import numpy as np
+'''
 import CoreLocation
 
 manager = CoreLocation.CLLocationManager.alloc().init()
@@ -12,9 +13,10 @@ if loc is None:
 else:
  coord = loc.coordinate()
  lat, lon = coord.latitude, coord.longitude
-
-//def convert_to_decimal(degrees, arcminutes, arcseconds):
-// return float(degrees + arcminutes/60. + arcseconds/3600.)
+'''
+#def convert_to_decimal(degrees, arcminutes, arcseconds):
+# return float(degrees + arcminutes/60. + arcseconds/3600.)
+lat, lon = 0,0
 
 m = Basemap(projection='merc',llcrnrlat=-80,urcrnrlat=80,llcrnrlon=-180,urcrnrlon=180,lat_ts=20,resolution='c')
 
