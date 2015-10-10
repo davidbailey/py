@@ -1,6 +1,6 @@
 os:
   - osx
-install: "brew update --quiet && brew install python && brew tap homebrew/science && brew install R && pip install
+install: "brew update && brew install python && brew tap homebrew/science && brew install R && pip install --quiet
 bottle
 cython
 PyObjC
