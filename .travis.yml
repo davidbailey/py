@@ -26,4 +26,4 @@ language:
   - python
 python:
   - "2.7"
-install: "sudo pip install gpxpy ipwhois ldap_paged_search  overpy splunk-sdk install cartopy"
+install: "sudo pip install gpxpy ipwhois ldap_paged_search overpy splunk-sdk cartopy"
