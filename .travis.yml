@@ -27,7 +27,7 @@ sudo pip install cython
 && sudo pip install pycurl
 && sudo pip install requests
 && sudo pip install rpy2
-&& sudo pip install scipy
+&& travis_wait sudo pip install scipy
 && sudo pip install shapely
 && sudo pip install splunk-sdk
 && sudo pip install patsy
