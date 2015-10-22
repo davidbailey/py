@@ -1,5 +1,5 @@
 import numpy as np
-//from pylab import *
+#from pylab import *
 import matplotlib.pyplot as plot
 import math
 
@@ -35,6 +35,7 @@ plot.grid(True)
 plot.show()
 
 
-\\Risk = Money * Time
-\\ Time = constant * Money
-\\ Outsource Time = constant1 * Time + constant2 * Money
+
+# Risk = Money * Time
+# Time = constant * Money
+# Outsource Time = constant1 * Time + constant2 * Money
