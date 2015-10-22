@@ -10,11 +10,8 @@ addons:
     - python-numpy
     - python-statsmodels
     - python-yaml
-    - python-geopandas
     - python-pandas
-    - python-fiona
     - python-matplotlib
-    - python-descartes
     - python-requests
     - python-rpy2
     - python-shapely
@@ -23,6 +20,11 @@ addons:
     - python-psycopg2
     - python-pycurl
     - python-sympy
+#    - python-geopandas
+#    - python-fiona
+#    - python-descartes
+
+
 language:
 - python
 python:
