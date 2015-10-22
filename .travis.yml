@@ -7,7 +7,7 @@ addons:
     - python-bottle
     - python-scipy
     - python-numpy
-    - python-statsmodels
+#    - python-statsmodels
     - python-yaml
     - python-pandas
     - python-matplotlib
