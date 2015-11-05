@@ -35,6 +35,8 @@ nessus_report.py is a Python script that take a SQLite database containing Nessu
  3. Import the .csv files into a SQLite database.
  4. Run nessus_report.py.
 
+pandas-stacked-bar.py: Create a simple stacked bar graph with Pandas.
+
 risk.py: Playing around with plots.
 
 speeds.py: Uses pandas, numpy, gtfstk, shapely, matplotlib, geopandas, and bottle to calculate the average speed (in MPH) of any Amtrak train (or other GTFS route) between each of its stops.
