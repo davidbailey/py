@@ -37,6 +37,8 @@ nessus_report.py is a Python script that take a SQLite database containing Nessu
 
 pandas-stacked-bar.py: Create a simple stacked bar graph with Pandas.
 
+pie.py: Connect a bunch of sensors to a Rasbperry Pi.
+
 podcast.py: Create a podcast feed from a list of YouTube videos.
 
 risk.py: Playing around with plots.
