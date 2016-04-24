@@ -10,9 +10,10 @@ GPIO.input(channel)
 
 GPIO.cleanup()
 
-# Serial UART TTL via CP2102 - EM4100 (125kHz RFID) - Connect 5V, GND, Tx
+# Serial UART TTL (via CP2102) - EM4100 (125kHz RFID) - Connect 5V, GND, Tx (via CP2102) / Rx (GPIO)
 import serial
-s = serial.Serial(port='/dev/ttyUSB0', baudrate=9600)
+# s = serial.Serial(port='/dev/ttyUSB0', baudrate=9600) # CP2102
+s = serial.Serial(port='/dev/ttyAMA0', baudrate=9600) # https://sites.google.com/site/semilleroadt/raspberry-pi-tutorials/gpio
 s.isOpen()
 
 id = []
