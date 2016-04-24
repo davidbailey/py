@@ -38,10 +38,14 @@ import smbus
 bus = smbus.SMBus(1)
 address = 0x48
 
-bus.read_byte_data(address, 0)
-bus.read_byte_data(address, 1)
-bus.read_byte_data(address, 2)
-bus.read_byte_data(address, 3)
+bus.write_i2c_block_data(address, 0x01, [197,131])
+a0 = bus.read_i2c_block_data(address, 0x00, 2)
+bus.write_i2c_block_data(address, 0x01, [213,131])
+a1 = bus.read_i2c_block_data(address, 0x00, 2)
+bus.write_i2c_block_data(address, 0x01, [229,131])
+a2 = bus.read_i2c_block_data(address, 0x00, 2)
+bus.write_i2c_block_data(address, 0x01, [245,131])
+a3 = bus.read_i2c_block_data(address, 0x00, 2)
 
 # SPI - RC522 (13.56MHz RIFD NFC) - Connect ...
 # echo spi-bcm2708 >> /etc/modules
