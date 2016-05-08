@@ -59,6 +59,30 @@ f = open('out.csv', 'a')
 f.write(str(out)[1:-1] + "\n")
 f.close()
 
+# Sharp GP2Y1010AU0F (Optical Dust Sensor) - Connect ...
+# http://www.howmuchsnow.com/arduino/airquality/
+# https://github.com/PaulZC/GP2Y1010AU0F_Dust_Sensor
+import RPi.GPIO as GPIO
+GPIO.setmode(GPIO.BOARD)
+channel = 17
+GPIO.setup(channel, GPIO.OUT)
+
+import smbus
+from time import sleep
+bus = smbus.SMBus(1)
+address = 0x48
+
+while(true):
+  GPIO.output(channel, GPIO.LOW)
+  sleep(0.00028)
+  bus.write_i2c_block_data(address, 0x01, [245,131])
+  #sleep(.01)
+  a3 = bus.read_i2c_block_data(address, 0x00, 2)
+  print(65535 - a3[0]*256 - a3[1])
+  sleep(0.00004)
+  GPIO.output(channel, GPIO.HIGH)
+  sleep(0.0968)
+  sleep(5)
 
 # SPI - RC522 (13.56MHz RIFD NFC) - Connect ...
 # echo spi-bcm2708 >> /etc/modules
@@ -71,3 +95,4 @@ s = spi.SPI("/dev/spidev0.0")
 s.read(1000)
 
 # SPI - nRF24L01 (2.4GHz Tranceiver) - http://tmrh20.github.io/RF24/
+
