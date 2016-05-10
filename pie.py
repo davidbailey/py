@@ -64,7 +64,7 @@ f.close()
 # https://github.com/PaulZC/GP2Y1010AU0F_Dust_Sensor
 import RPi.GPIO as GPIO
 GPIO.setmode(GPIO.BOARD)
-channel = 17
+channel = 11
 GPIO.setup(channel, GPIO.OUT)
 
 import smbus
@@ -72,16 +72,15 @@ from time import sleep
 bus = smbus.SMBus(1)
 address = 0x48
 
-while(true):
+while(True):
   GPIO.output(channel, GPIO.LOW)
   sleep(0.00028)
   bus.write_i2c_block_data(address, 0x01, [245,131])
-  #sleep(.01)
-  a3 = bus.read_i2c_block_data(address, 0x00, 2)
-  print(65535 - a3[0]*256 - a3[1])
   sleep(0.00004)
   GPIO.output(channel, GPIO.HIGH)
   sleep(0.0968)
+  a3 = bus.read_i2c_block_data(address, 0x00, 2)
+  print(65535 - a3[0]*256 - a3[1])
   sleep(5)
 
 # SPI - RC522 (13.56MHz RIFD NFC) - Connect ...
