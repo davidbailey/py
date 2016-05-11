@@ -8,6 +8,8 @@ from time import sleep
 bus = smbus.SMBus(1)
 address = 0x48
 
+from time import time
+
 while(True):
   GPIO.output(channel, GPIO.HIGH)
   sleep(0.00028)
@@ -25,7 +27,8 @@ while(True):
   bus.write_i2c_block_data(address, 0x01, [229,131])
   sleep(.01)
   a2 = bus.read_i2c_block_data(address, 0x00, 2)
-  out = [65535 - a0[0]*256 - a0[1], 65535 - a1[0]*256 - a1[1], 65535 - a2[0]*256 - a2[1], 65535 - a3[0]*256 - a3[1]]
+  out = [time(),65535 - a0[0]*256 - a0[1], 65535 - a1[0]*256 - a1[1], 65535 - a2[0]*256 - a2[1], 65535 - a3[0]*256 - a3[1]]
   f = open('out.csv', 'a')
   f.write(str(out)[1:-1] + "\n")
   f.close()
+  sleep(60)
