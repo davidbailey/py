@@ -32,3 +32,10 @@ while(True):
   f.write(str(out)[1:-1] + "\n")
   f.close()
   sleep(60)
+
+import pandas
+from matplotlib import pyplot
+
+df = pandas.read_csv('out.csv', names=['time','a0','a1','a2','a3'], index_col=0)
+df.plot()
+pyplot.show()
