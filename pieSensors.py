@@ -37,5 +37,5 @@ import pandas
 from matplotlib import pyplot
 
 df = pandas.read_csv('out.csv', names=['time','a0','a1','a2','a3'], index_col=0)
-df.plot()
+df.plot(style='.')
 pyplot.show()
