@@ -40,7 +40,7 @@ import smbus
 from time import sleep
 bus = smbus.SMBus(1)
 a2d_address = 0x48
-
+bmp085_address = 0x77
 
 bus.write_i2c_block_data(a2d_address, 0x01, [197,131])
 sleep(.01)
