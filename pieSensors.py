@@ -27,7 +27,7 @@ while(True):
   bus.write_i2c_block_data(address, 0x01, [229,131])
   sleep(.01)
   a2 = bus.read_i2c_block_data(address, 0x00, 2)
-  out = [time(),65535 - a0[0]*256 - a0[1], 65535 - a1[0]*256 - a1[1], 65535 - a2[0]*256 - a2[1], 65535 - a3[0]*256 - a3[1]]
+  out = [time(), 256 * a0[0] + a0[1], 256 * a1[0] + a1[1], 256 * a2[0] + a2[1], 256 * a3[0] + a3[1]]
   f = open('out.csv', 'a')
   f.write(str(out)[1:-1] + "\n")
   f.close()
