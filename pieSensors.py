@@ -21,12 +21,12 @@ while(True):
   sleep(0.00004)
   GPIO.output(channel, GPIO.HIGH)
   sleep(0.0968)
+  bus.write_i2c_block_data(address, 0x01, [197,131])
+  sleep(.01)
   a0 = bus.read_i2c_block_data(address, 0x00, 2)
   bus.write_i2c_block_data(address, 0x01, [213,131])
   sleep(.01)
   a1 = bus.read_i2c_block_data(address, 0x00, 2)
-  bus.write_i2c_block_data(address, 0x01, [229,131])
-  sleep(.01)
   bus.write_i2c_block_data(address, 0x01, [245,131])
   sleep(.01)
   a3 = bus.read_i2c_block_data(address, 0x00, 2)
@@ -38,7 +38,7 @@ while(True):
   f = open('out.csv', 'a')
   f.write(str(out)[1:-1] + "\n")
   f.close()
-  sleep(60)
+  sleep(59)
 
 import pandas
 from matplotlib import pyplot
