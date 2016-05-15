@@ -14,8 +14,9 @@ bmp085 = BMP085.BMP085()
 from time import time
 
 while(True):
-  GPIO.output(channel, GPIO.LOW)
   bus.write_i2c_block_data(address, 0x01, [229,131])
+  sleep(.01)
+  GPIO.output(channel, GPIO.LOW)
   sleep(0.00028)
   a2 = bus.read_i2c_block_data(address, 0x00, 2)
   sleep(0.00004)
