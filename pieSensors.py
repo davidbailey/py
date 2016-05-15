@@ -43,6 +43,6 @@ while(True):
 import pandas
 from matplotlib import pyplot
 
-df = pandas.read_csv('out.csv', names=['time', 'a0', 'a1', 'a2', 'a3', 'temperature', 'pressure', 'altitude', 'sealevel_pressure'], index_col=0)
+df = pandas.read_csv('out.csv', names=['time', 'a0 (MQ4 CH4)', 'a1 (MQ7 CO)', 'a2 (Dust)', 'a3', 'temperature', 'pressure', 'altitude', 'sealevel_pressure'], index_col=0)
 df.plot(style='.')
 pyplot.show()
