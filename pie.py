@@ -95,6 +95,8 @@ while(True):
 
 
 # SPI - RC522 (13.56MHz RIFD NFC) - Connect ...
+# https://github.com/mxgxw/MFRC522-python
+# ...
 # echo spi-bcm2708 >> /etc/modules
 # echo dtparam=spi=on >> /boot/config.txt
 # apt-get install python-pip
