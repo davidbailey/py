@@ -35,6 +35,10 @@ nessus_report.py is a Python script that take a SQLite database containing Nessu
  3. Import the .csv files into a SQLite database.
  4. Run nessus_report.py.
 
+oktaAppSAML.py: Create, view, modify and delete SAML apps in Okta.
+
+oktaDiff*.py: Compare users in Okta with users in a csv or text file or users in Dropbox, Salesforce, or Slack.
+
 pandas-stacked-bar.py: Create a simple stacked bar graph with Pandas.
 
 pie.py: Connect a bunch of sensors to a Rasbperry Pi.
