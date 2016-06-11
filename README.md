@@ -10,6 +10,8 @@ county-map.py: Uses overpy (openstreetmap), numpy, matplotlib, shapely, descarte
 
 csv 2 json or html.py: Uses pandas and json to convert a csv to a json file or an html table.
 
+delicious.py: Convert del.icio.us bookmarks to a .csv file.
+
 finance.py: Financial calculators.
 
 flowPairCheck.py: Uses pandas and numpy to check for communications between a list of clients and a list of servers in netflow traffic.
