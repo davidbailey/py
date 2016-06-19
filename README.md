@@ -54,9 +54,13 @@ podcast.py: Create a podcast feed from a list of YouTube videos.
 
 risk.py: Playing around with plots.
 
-speeds.py: Uses pandas, numpy, gtfstk, shapely, matplotlib, geopandas, and bottle to calculate the average speed (in MPH) of any Amtrak train (or other GTFS route) between each of its stops.
+speeds.py: Uses gpxpy, shapely, geopandas, numpy, and matplotlib to calculate the speed at each point along a GPS track and plots that speed on a map.
 
 ![speeds.py example](https://raw.githubusercontent.com/davidbailey/py/master/speeds.png "speeds.py example")
+
+speeds2.py: Uses pandas, numpy, gtfstk, shapely, matplotlib, geopandas, and bottle to plot 
+
+![speeds2.py example](https://raw.githubusercontent.com/davidbailey/py/master/speeds2.png "speeds2.py example")
 
 splunk.py: Uses the Splunk API, geoip, ipwhois, pandas, numpy, and re to look up recent successful logins and track down the client computer.
 
