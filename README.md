@@ -30,6 +30,8 @@ iphorse.py: Uses requests and yaml to find your public IP address and return it 
 
 map-state.py: Uses overpy (openstreetmap), numpy, matplotlib, shapely, descartes, and fiona to build a fancy map of California.
 
+movies.py: Uses pandas and requests to query the Open Movie Database.
+
 nessus_report.py is a Python script that take a SQLite database containing Nessus vulnerability scan results, processes, them, and generates PDF reports. It is intended for large multi-department organizations that need to quickly sort through large amounts of scan data and create relevent reports for each department.
 
  1. Run a Nessus scan. Export the results as a .csv file.
@@ -75,5 +77,3 @@ transportationBook.py: Playing with examples from Dr. Christopher M. Monsere's t
 usc.py: Uses pandas, matplotlib, numpy, and cartopy to look at USC's success in the Olympics.
 
 modules: A list of modules used in these files.
-
-
