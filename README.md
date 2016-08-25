@@ -56,6 +56,8 @@ podcast.py: Create a podcast feed from a list of YouTube videos.
 
 risk.py: Playing around with plots.
 
+salesforceDisableUsers.py: Bulk disable Salesforce users who are in Stage, but not in Prod.
+
 speeds.py: Uses gpxpy, shapely, geopandas, numpy, and matplotlib to calculate the speed at each point along a GPS track and plots that speed on a map.
 
 ![speeds.py example](https://raw.githubusercontent.com/davidbailey/py/master/speeds.png "speeds.py example")
