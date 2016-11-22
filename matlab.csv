@@ -22,7 +22,7 @@ Flip Left to Right,numpy.fliplr(matrix),fliplr(matrix)
 Flip Up to Down,numpy.flipud(matrix),flipud(matrix)
 Zeros Matrix,"numpy.zeros([2,2])","zeros(2,2)"
 Ones Matrix,"numpy.ones([2,2])","ones(2,2)"
-Eye Matrix,"numpy.eye(4),eye(4)
+Eye Matrix,numpy.eye(4),eye(4)
 Random Matrix,"numpy.random.rand(2,2)","rand(2,2)"
 Random Normal Matrix,"numpy.random.randn(2,2)","randn(2,2)"
 Plotting,,
