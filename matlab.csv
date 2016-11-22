@@ -3,7 +3,7 @@ Set a variable,a = 1,a = 1
 Print/Display,disp(a),print(a)
 Basic math,a + a,a + a
 Pi,math.pi\npi,pi
-Exponent,math.exp,exp(1),exp(1)
+Exponent,math.exp(1),exp(1)
 Array,"numpy.array([1, 2, 3])",[1 2 3]
 Matrix,"numpy.matrix\nmatrix([1, 2; 3, 4])",[1 2; 3 4]
 Transpose,numpy.transpose\ntranspose(matrix),matrix\'
