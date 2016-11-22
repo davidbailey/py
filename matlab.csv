@@ -26,7 +26,7 @@ Eye Matrix,numpy.eye(4),eye(4)
 Random Matrix,"numpy.random.rand(2,2)","rand(2,2)"
 Random Normal Matrix,"numpy.random.randn(2,2)","randn(2,2)"
 Plotting,,
-Functions,,
+Functions,def myfunction(input): print(input),function output = myfunction (input); disp(input); end
 If,if (1 == 1): print(1),if (1 == 1); disp(1); end
 For Loop,for a in numpy.arange(10): print(1),for n = 1:10; disp(1); end
 While Loop,while (1 == 1): print(1),while 1 == 1; disp(1); end
