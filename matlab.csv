@@ -32,4 +32,4 @@ If,if (1 == 1): print(1),if (1 == 1); disp(1); end
 For Loop,for a in numpy.arange(10): print(1),for n = 1:10; disp(1); end
 While Loop,while (1 == 1): print(1),while 1 == 1; disp(1); end
 Read a csv,matrix = pandas.read_csv('file.csv'),matrix = csvread(file.csv)
-Write a csv,matrix.to_csv('file.csv'),csvwrite(file.csv,matrix)
+Write a csv,matrix.to_csv('file.csv'),"csvwrite(file.csv,matrix)"
