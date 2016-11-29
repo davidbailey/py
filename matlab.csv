@@ -1,6 +1,7 @@
 ,Python,MATLAB
 Set a variable,a = 1,a = 1
-Print/Display,disp(a),print(a)
+Output,disp(a),print(a)
+Input,a = raw_input('Text: '),a = input('Text: ')
 Basic math,a + a,a + a
 Pi,math.pi,pi
 Exponent,math.exp(1),exp(1)
