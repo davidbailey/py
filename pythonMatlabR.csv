@@ -29,7 +29,7 @@ Random Normal Matrix,"numpy.random.randn(2,2)","randn(2,2)",
 Plotting,,,
 Functions,def myfunction(input): print(input),function output = myfunction (input); disp(input); end,
 If,if (1 == 1): print(1),if (1 == 1); disp(1); end,
-For Loop,for a in numpy.arange(10): print(1),for n = 1:10; disp(1); end,
+For Loop,for a in numpy.arange(10): print(1),for n = 1:10; disp(1); end,for (i in 1: 10){ print(1) }
 While Loop,while (1 == 1): print(1),while 1 == 1; disp(1); end,
 Read a csv,df = pandas.read_csv('file.csv'),df = csvread(file.csv),df <- read.csv('df.csv')
 Write a csv,df.to_csv('file.csv'),"csvwrite(file.csv,df)",
@@ -38,5 +38,7 @@ View the first few rows of a DataFrame,df.head(),,head(df)
 Select a column from a DataFrame,df['column'],,df$column
 Calculate the mean of an array,numpy.mean(a),,mean(a)
 Calculate the variance of an array,numpy.var(a),,var(a)
+Calculate the median of an array,numpy.median(a),,median(a)
+Print a summary for a DataFrame,df.describe(),,summary(df)
 Help,help(numpy.var),,?var
 Comment,# comment,,# comment
