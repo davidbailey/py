@@ -38,3 +38,5 @@ View the first few rows of a DataFrame,df.head(),,head(df)
 Select a column from a DataFrame,df['column'],,df$column
 Calculate the mean of an array,numpy.mean(a),,mean(a)
 Calculate the variance of an array,numpy.var(a),,var(a)
+Help,help(numpy.var),,?var
+Comment,# comment,,# comment
