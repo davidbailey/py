@@ -1,6 +1,6 @@
 ,Python,R
 Read a csv into a DataFrame,df = pandas.read_csv('df.csv'),df <- read.csv('df.csv')
-Create a list,"l = [1, 2, 3, 4]",l = c(1,2,3,4)
+Create a list,"l = [1, 2, 3, 4]","l = c(1,2,3,4)"
 Import a library,import pandas,library(maptools)
 View the first few rows of a DataFrame,df.head(),head(df)
 Select a column from a DataFrame,df['column'],df$column
