@@ -43,4 +43,4 @@ Print a summary for a DataFrame,df.describe(),,summary(df)
 Help,help(numpy.var),,?var
 Comment,# comment,,# comment
 Create a random normal distribution,"numpy.random.normal(mu, sigma, numberOfPoints)",,"rnorm(numberOfPoints, mu, sigma)"
-Plot a histogram,pyplot.hist(distribution),,hist(distribution)
+Plot a histogram,matplotlib.pyplot.hist(distribution),,hist(distribution)
