@@ -33,3 +33,6 @@ For Loop,for a in numpy.arange(10): print(1),for n = 1:10; disp(1); end,
 While Loop,while (1 == 1): print(1),while 1 == 1; disp(1); end,
 Read a csv,df = pandas.read_csv('file.csv'),df = csvread(file.csv),df <- read.csv('df.csv')
 Write a csv,df.to_csv('file.csv'),"csvwrite(file.csv,df)",
+Import a library,import pandas,,library(maptools)
+View the first few rows of a DataFrame,df.head(),,head(df)
+Select a column from a DataFrame,df['column'],,df$column
