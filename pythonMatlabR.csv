@@ -36,3 +36,5 @@ Write a csv,df.to_csv('file.csv'),"csvwrite(file.csv,df)",
 Import a library,import pandas,,library(maptools)
 View the first few rows of a DataFrame,df.head(),,head(df)
 Select a column from a DataFrame,df['column'],,df$column
+Calculate the mean of an array,numpy.mean(a),,mean(a)
+Calculate the variance of an array,numpy.var(a),,var(a)
