@@ -5,7 +5,7 @@ Input,a = raw_input('Text: '),a = input('Text: '),
 Basic math,a + a,a + a,a + a
 Pi,math.pi,pi,pi
 Exponent,math.exp(1),exp(1),exp(1)
-Array,"numpy.array([1, 2, 3])",[1 2 3],c(1,2,3,4,5)
+Array,"numpy.array([1, 2, 3])",[1 2 3],"c(1,2,3,4,5)"
 Matrix,"numpy.matrix([1, 2; 3, 4])",[1 2; 3 4],
 Transpose,numpy.transpose(matrix),matrix',
 ,numpy.arrange(10),1:10,
