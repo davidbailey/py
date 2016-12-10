@@ -26,7 +26,6 @@ Ones Matrix,"numpy.ones([2,2])","ones(2,2)",
 Eye Matrix,numpy.eye(4),eye(4),
 Random Matrix,"numpy.random.rand(2,2)","rand(2,2)",
 Random Normal Matrix,"numpy.random.randn(2,2)","randn(2,2)",
-Plotting,,,
 Functions,def myfunction(input): print(input),function output = myfunction (input); disp(input); end,
 If,if (1 == 1): print(1),if (1 == 1); disp(1); end,
 For Loop,for a in numpy.arange(10): print(1),for n = 1:10; disp(1); end,for (i in 1: 10){ print(1) }
@@ -43,4 +42,6 @@ Print a summary for a DataFrame,df.describe(),,summary(df)
 Help,help(numpy.var),,?var
 Comment,# comment,,# comment
 Create a random normal distribution,"numpy.random.normal(mu, sigma, numberOfPoints)",,"rnorm(numberOfPoints, mu, sigma)"
+Plotting,,,
 Plot a histogram,matplotlib.pyplot.hist(distribution),,hist(distribution)
+Plot a DataFrame against itself,pandas.tools.plotting.scatter_matrix,,pairs(df)
