@@ -42,6 +42,8 @@ Print a summary for a DataFrame,df.describe(),,summary(df)
 Help,help(numpy.var),,?var
 Comment,# comment,,# comment
 Create a random normal distribution,"numpy.random.normal(mu, sigma, numberOfPoints)",,"rnorm(numberOfPoints, mu, sigma)"
+Calculate the probability of each value,series.value_counts()/len(series),,prop.table(table(column)) or table(column)/sum(table(column))*
 Plotting,,,
 Plot a histogram,matplotlib.pyplot.hist(distribution),,hist(distribution)
 Plot a DataFrame against itself,pandas.tools.plotting.scatter_matrix(df),,pairs(df)
+* = untested,,,
