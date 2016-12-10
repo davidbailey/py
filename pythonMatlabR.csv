@@ -42,6 +42,8 @@ Print a summary for a DataFrame,df.describe(),,summary(df)
 Help,help(numpy.var),,?var
 Comment,# comment,,# comment
 Create a random normal distribution,"numpy.random.normal(mu, sigma, numberOfPoints)",,"rnorm(numberOfPoints, mu, sigma)"
+Normal PDF,"scipy.stats.norm.pdf(x, loc=0, scale=1)",,"dnorm(x, mu, sigma)"
+Normal CDF,"scipy.stats.norm.cdf(x, loc=0, scale=1)",,"pnorm(x, mu, sigma)"
 Calculate the probability of each value,series.value_counts()/len(series),,prop.table(table(column))* or table(column)/sum(table(column))*
 n choose k with probability p,"scipy.stats.binom.pmf(k, n, p)",,"dbinom(k, n, p)"
 Plotting,,,
