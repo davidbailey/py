@@ -42,7 +42,7 @@ Print a summary for a DataFrame,df.describe(),,summary(df)
 Help,help(numpy.var),,?var
 Comment,# comment,,# comment
 Create a random normal distribution,"numpy.random.normal(mu, sigma, numberOfPoints)",,"rnorm(numberOfPoints, mu, sigma)"
-Calculate the probability of each value,series.value_counts()/len(series),,prop.table(table(column)) or table(column)/sum(table(column))*
+Calculate the probability of each value,series.value_counts()/len(series),,prop.table(table(column))* or table(column)/sum(table(column))*
 n choose k with probability p,"binom.pmf(k, n, p)",,"dbinom(k, n, p)"
 Plotting,,,
 Plot a histogram,matplotlib.pyplot.hist(distribution),,hist(distribution)
