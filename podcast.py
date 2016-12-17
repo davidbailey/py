@@ -28,7 +28,7 @@ timestamp = formatdate(0)
 for index, row in urls.iterrows():
   if row['urlfilesize'][0] != 'nourl':
       rss += "<item>"
-      rss += "<title>" + row['Song'] + "</title>"
+      rss += "<title>" + escape(row['Song']) + "</title>"
       rss += "<pubDate>" + timestamp + "</pubDate>"
       rss += "<enclosure url=\"" + str(row['urlfilesize'][0]) + "\" length=\"" + str(row['urlfilesize'][1]) + "\" type=\"video/mp4\" />"
       rss += "</item>"
