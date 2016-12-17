@@ -26,11 +26,12 @@ urls['urlfilesize'] = urls['YouTube Link'].apply(getURL)
 rss = '<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" version="2.0"><channel><title>Localhost</title><language>en-US</language>'
 timestamp = formatdate(0)
 for index, row in urls.iterrows():
-    rss += "<item>"
-    rss += "<title>" + row['Song'] + "</title>"
-    rss += "<pubDate>" + timestamp + "</pubDate>"
-    rss += "<enclosure url=\"" + str(row['urlfilesize'][0]) + "\" length=\"" + str(row['urlfilesize'][1]) + "\" type=\"video/mp4\" />"
-    rss += "</item>"
+  if row['urlfilesize'][0] != 'nourl':
+      rss += "<item>"
+      rss += "<title>" + row['Song'] + "</title>"
+      rss += "<pubDate>" + timestamp + "</pubDate>"
+      rss += "<enclosure url=\"" + str(row['urlfilesize'][0]) + "\" length=\"" + str(row['urlfilesize'][1]) + "\" type=\"video/mp4\" />"
+      rss += "</item>"
 
 rss += "</channel></rss>"
 
