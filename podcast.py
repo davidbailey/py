@@ -11,13 +11,16 @@ music = pandas.read_csv('https://raw.githubusercontent.com/davidbailey/Notes/mas
 urls = music[music['YouTube Link'].notnull()]
 
 def getURL(url):
-  video = pafy.new(url)
-  video_url = video.getbest().url
-  filesize = video.getbest().get_filesize()
-  r = requests.get("http://tinyurl.com/api-create.php?" + urlencode({'url':video_url}))
-  short_url = r.text
-  return (short_url, filesize)
-
+  try:
+    video = pafy.new(url)
+    video_url = video.getbest().url
+    filesize = video.getbest().get_filesize()
+    r = requests.get("http://tinyurl.com/api-create.php?" + urlencode({'url':video_url}))
+    short_url = r.text
+    return (short_url, filesize)
+  except:
+    return ('nourl', 0)
+  
 urls['urlfilesize'] = urls['YouTube Link'].apply(getURL)
 #urls.to_csv()
 rss = '<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" version="2.0"><channel><title>Localhost</title><language>en-US</language>'
