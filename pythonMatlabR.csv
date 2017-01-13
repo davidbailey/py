@@ -7,6 +7,8 @@ Pi,math.pi,pi,pi
 Exponent,math.exp(1),exp(1),exp(1)
 Array,"numpy.array([1, 2, 3])",[1 2 3],"c(1,2,3,4,5)"
 Matrix,"numpy.matrix('1 2; 3 4')",[1 2; 3 4],
+Select a row,"matrix[0,]","matrix(1,:)"
+Select a column,"matrix[:,0]","matrix(:,1)"
 Transpose,numpy.transpose(matrix),matrix',
 ,numpy.arrange(10),1:10,
 ,"numpy.arrange(1,10,.5)",1:.5:10,
