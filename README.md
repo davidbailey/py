@@ -78,4 +78,6 @@ transportationBook.py: Playing with examples from Dr. Christopher M. Monsere's t
 
 usc.py: Uses pandas, matplotlib, numpy, and cartopy to look at USC's success in the Olympics.
 
+walkbike2015.py: Used to gather the census data and zip code geometries for https://davidbailey.github.io/bicycle.html and https://davidbailey.github.io/walked.html.
+
 modules: A list of modules used in these files.
