@@ -54,7 +54,7 @@ pieSensors.py: Read values from sensors over time, save the values to a csv, and
 
 podcast.py: Create a podcast feed from a list of YouTube videos.
 
-railRadius.py: Calculate the maximum radius along a way from OpenStreetMap. For use with https://davidbailey.github.io/rail.html.
+railRadius.py: Calculate the maximum radius along a way from OpenStreetMap. For use with https://davidbailey.github.io/rail.
 
 risk.py: Playing around with plots.
 
