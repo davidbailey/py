@@ -1,5 +1,3 @@
-[![Build Status](https://travis-ci.org/davidbailey/py.svg?branch=master)](https://travis-ci.org/davidbailey/py)
-
 ad.py: Uses ldap and pandas to connect to an Active Directory Domain Controller and build a DataFrame with information about all member computers.
 
 basemap.py: Uses Basemap and CoreLocation (via PyObjC), and bumpy to generate a map and highlight your location.
@@ -81,5 +79,13 @@ transportationBook.py: Playing with examples from Dr. Christopher M. Monsere's t
 usc.py: Uses pandas, matplotlib, numpy, and cartopy to look at USC's success in the Olympics.
 
 walkbike2015.py: Used to gather the census data and zip code geometries for https://davidbailey.github.io/bicycle.html and https://davidbailey.github.io/walked.html.
+
+walkingcycling.py: Data analysis and visualization of United States and California transportation census and fatality/injury data for https://github.com/davidbailey/tum/blob/master/The_Feedback_Loop_of_Cycling_and_Walking/The_Feedback_Loop_of_Cycling_and_Walking.pdf.
+
+![walkingcycling.py example](https://raw.githubusercontent.com/davidbailey/The_Feedback_Loop_of_Cycling_and_Walking/master/commutersbymode.png "walkingcycling.py example")
+
+![walkingcycling.py example](https://raw.githubusercontent.com/davidbailey/The_Feedback_Loop_of_Cycling_and_Walking/master/victimsbymode.png "walkingcycling.py example")
+
+![walkingcycling.py example](https://raw.githubusercontent.com/davidbailey/The_Feedback_Loop_of_Cycling_and_Walking/master/usrates.png "walkingcycling.py example")
 
 modules: A list of modules used in these files.
