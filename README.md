@@ -82,10 +82,10 @@ walkbike2015.py: Used to gather the census data and zip code geometries for http
 
 walkingcycling.py: Data analysis and visualization of United States and California transportation census and fatality/injury data for https://github.com/davidbailey/tum/blob/master/The_Feedback_Loop_of_Cycling_and_Walking/The_Feedback_Loop_of_Cycling_and_Walking.pdf.
 
-![walkingcycling.py example](https://raw.githubusercontent.com/davidbailey/tum/master/The_Feedback_Loop_of_Cycling_and_Walking/commutersbymode.png "walkingcycling.py example")
+![walkingcycling.py example](https://raw.githubusercontent.com/davidbailey/tum/master/LaTeX/The_Feedback_Loop_of_Cycling_and_Walking/commutersbymode.png "walkingcycling.py example")
 
-![walkingcycling.py example](https://raw.githubusercontent.com/davidbailey/tum/master/The_Feedback_Loop_of_Cycling_and_Walking/victimsbymode.png "walkingcycling.py example")
+![walkingcycling.py example](https://raw.githubusercontent.com/davidbailey/tum/master/LaTeX/The_Feedback_Loop_of_Cycling_and_Walking/victimsbymode.png "walkingcycling.py example")
 
-![walkingcycling.py example](https://raw.githubusercontent.com/davidbailey/tum/master/The_Feedback_Loop_of_Cycling_and_Walking/usrates.png "walkingcycling.py example")
+![walkingcycling.py example](https://raw.githubusercontent.com/davidbailey/tum/master/LaTeX/The_Feedback_Loop_of_Cycling_and_Walking/usrates.png "walkingcycling.py example")
 
 modules: A list of modules used in these files.
