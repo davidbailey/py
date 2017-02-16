@@ -58,11 +58,11 @@ risk.py: Playing around with plots.
 
 salesforceDisableUsers.py: Bulk disable Salesforce users who are in Stage, but not in Prod.
 
-speeds.py: Uses gpxpy, shapely, geopandas, numpy, and matplotlib to calculate the speed at each point along a GPS track and plots that speed on a map.
+speeds.py: Uses pandas, numpy, gtfstk, shapely, matplotlib, geopandas, and bottle to plot 
 
 ![speeds.py example](https://raw.githubusercontent.com/davidbailey/py/master/speeds.png "speeds.py example")
 
-speeds2.py: Uses pandas, numpy, gtfstk, shapely, matplotlib, geopandas, and bottle to plot 
+speeds2.py: Uses gpxpy, shapely, geopandas, numpy, and matplotlib to calculate the speed at each point along a GPS track and plots that speed on a map.
 
 ![speeds2.py example](https://raw.githubusercontent.com/davidbailey/py/master/speeds2.png "speeds2.py example")
 
